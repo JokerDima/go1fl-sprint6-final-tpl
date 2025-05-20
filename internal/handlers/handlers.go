@@ -59,11 +59,6 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 
 	//Создаём и записываем в файл
 	filename := time.Now().UTC().Format("2006-01-02-150405") + filepath.Ext(handler.Filename)
-	err = os.Chdir("../")
-	if err != nil {
-		http.Error(w, "Ошибка пути сохранения", http.StatusInternalServerError)
-		return
-	}
 	err = os.WriteFile(filename, []byte(output), 0755)
 	if err != nil {
 		http.Error(w, "Ошибка сохранения файла", http.StatusInternalServerError)
