@@ -14,7 +14,7 @@ func Replace(s string) (string, error) {
 		return "", errors.New("no data available")
 	}
 
-	if strings.ContainsAny(s, "ауоиэыяюеё") {
+	if strings.ContainsAny(s, "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя") {
 		return morse.ToMorse(s), nil
 	} else {
 		return morse.ToText(s), nil
