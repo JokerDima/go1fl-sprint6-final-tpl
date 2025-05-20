@@ -12,7 +12,7 @@ import (
 
 // Создаём стартовую страницу index.html для загрузки файлов
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	data, err := os.ReadFile("../index.html")
+	data, err := os.ReadFile("../go1fl-sprint6-final-tpl/index.html")
 	if err != nil {
 		http.Error(w, "Ошибка чтения index.html", http.StatusInternalServerError)
 		return
